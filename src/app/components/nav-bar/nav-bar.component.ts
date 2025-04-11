@@ -17,10 +17,9 @@ import { RouterLink } from '@angular/router';
 
 
       <nav class="navigation">
-        <a routerLink="/new-cars" class="nav-link">COCHES NUEVOS</a>
-        <a routerLink="/certified-used" class="nav-link">USADOS CERTIFICADOS</a>
-        <a routerLink="/assistance" class="nav-link">SERVICIO DE ASISTENCIA</a>
-        <a routerLink="/owners" class="nav-link">PROPIETARIOS</a>
+        <a routerLink="/new-cars" class="nav-link">INICIAR SESION</a>
+        <a routerLink="/certified-used" class="nav-link">CERRAR SESION</a>
+       
     
       </nav>
 

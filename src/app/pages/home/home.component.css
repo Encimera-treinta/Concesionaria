@@ -1,106 +1,226 @@
-/* Contenedor del video */
+/* Estilo para el contenedor de video y superposición */
 .video-container {
-    position: relative;
-    height: 200px; /* Altura más compacta del contenedor */
-    overflow: hidden;
-  }
-  
-  .background-video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ajusta el video al contenedor */
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-  }
-  
-  /* Sombra sobre el video */
-  .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.5); /* Oscurecimiento del video */
-    z-index: 2;
-  }
-  
-  .title {
-    color: white;
-    font-size: 1.5rem; /* Tamaño reducido del título */
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Sombra del texto */
-    font-family: 'Segoe UI', sans-serif;
-    margin-bottom: 1rem;
-  }
-  
-  /* Elementos en paralelo */
-  .subtitle-container {
-    display: flex;
-    flex-direction: row; /* Coloca las letras en paralelo */
-    justify-content: center; /* Centra los subtítulos horizontalmente */
-    align-items: center; /* Alinea verticalmente */
-    gap: 2rem; /* Espacio entre las letras */
-    margin-top: 1rem; /* Añade un pequeño espacio superior */
-  }
-  
-  .subtitle {
-    color: white;
-    font-size: 1.2rem; /* Tamaño más compacto */
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Sombra del texto */
-    font-family: 'Segoe UI', sans-serif;
-    text-align: center;
-  }
-  
-  /* Navegación debajo del video */
-  .nav-below-video {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    padding: 1rem 0;
-    background-color: #1b1b1b; /* Fondo oscuro */
-    border-top: 2px solid #c40000; /* Borde superior */
-  }
-  
-  .nav-link {
-    color: white;
-    text-decoration: none;
-    font-size: 0.85rem;
-    letter-spacing: 0.8px;
-    transition: color 0.3s ease;
-  }
-  
-  .nav-link:hover {
-    color: #c40000; /* Color al pasar el cursor */
-  }
-  
-  /* Diseño responsivo */
-  @media (max-width: 768px) {
-    .subtitle-container {
-      flex-direction: column; /* Ajusta las letras para pantallas pequeñas */
-      gap: 0.5rem; /* Espacio reducido */
-    }
-  
-    .title {
-      font-size: 1.2rem; /* Tamaño reducido para móviles */
-    }
-  
-    .subtitle {
-      font-size: 1rem; /* Ajusta los subtítulos para pantallas pequeñas */
-    }
-  
-    .nav-below-video {
-      flex-direction: column;
-      align-items: center;
-      gap: 0.5rem;
-    }
-  
-    .nav-link {
-      font-size: 0.75rem;
-    }
-  }
-  
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #2c2c2c; /* Fondo gris oscuro */
+}
+
+.video-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120%;
+  height: 120%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.video-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: none;
+  pointer-events: none;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(44, 44, 44, 0.7); /* Oscurecimiento suave */
+  z-index: 2;
+}
+
+.title {
+  color: #ffffff;
+  font-size: 1.8rem;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  font-family: 'Segoe UI', sans-serif;
+  margin-bottom: 1rem;
+}
+
+.subtitle-container {
+  position: absolute; /* Posiciona en relación al contenedor de video */
+  top: 50%; /* Centra verticalmente */
+  left: 50%; /* Centra horizontalmente */
+  transform: translate(-50%, -50%); /* Ajusta para estar en el centro exacto */
+  display: flex;
+  flex-direction: column; /* Organiza los elementos en una columna */
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  z-index: 3; /* Asegúrate de que esté encima del video */
+}
+
+.vertical-text {
+  display: flex;
+  flex-direction: row; /* Coloca las palabras en línea horizontal */
+  gap: 1rem;
+  color: #ffffff;
+}
+
+.vertical-text span {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 1.8rem;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Visibilidad sobre el video */
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #ffffff;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+
+/* Navegación debajo del video */
+.nav-below-video {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem 0;
+  background-color: #0099cc; /* Fondo azul vibrante */
+  border-top: 2px solid #1ed760; /* Verde Esmeralda */
+}
+
+.nav-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.85rem;
+  letter-spacing: 0.8px;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #1ed760; /* Verde al pasar el cursor */
+}
+
+/* Sección de detalles de autos */
+.car-details-section {
+  background-color: #2c2c2c;
+  padding: 4rem 2rem;
+  color: #ffffff;
+  text-align: center;
+}
+
+.section-title {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 2.5rem;
+  color: #0099cc;
+  margin-bottom: 3rem;
+}
+
+.car-details-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.car-detail {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+}
+
+.car-image {
+  width: 400px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.car-info {
+  text-align: left;
+}
+
+.car-info h3 {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 1.8rem;
+  color: #0099cc;
+  margin-bottom: 1rem;
+}
+
+.car-info p {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #f2f2f2; /* Texto gris claro */
+}
+
+/* Carrusel */
+.carousel-section {
+  background-color: #2c2c2c;
+  color: #ffffff;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.carousel-title {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 2.5rem;
+  color: #0099cc;
+  margin-bottom: 2rem;
+}
+
+.carousel-wrapper {
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.carousel-container {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+  flex: 0 0 100%;
+  text-align: center;
+}
+
+.carousel-item img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #ffffff; /* Botón blanco */
+  color: #0099cc; /* Texto azul */
+  border: none;
+  padding: 0.5rem 1.5rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-arrow.left-arrow {
+  left: -3rem;
+}
+
+.carousel-arrow.right-arrow {
+  right: -3rem;
+}
+
+.carousel-arrow:hover {
+  background-color: #1ed760; /* Fondo verde al hover */
+  color: #ffffff; /* Texto blanco */
+}

@@ -1,17 +1,110 @@
 <div class="video-container">
-  <!-- Video del carro -->
-  <video autoplay muted loop class="background-video">
-    <source src="src/assets/logos/PAGANI.mp4" type="video/mp4" />
-    Tu navegador no soporta videos HTML5.
-  </video>
+  <div class="video-wrapper">
+    <!-- Video de YouTube con autoplay, controles desactivados y loop -->
+    <iframe 
+      src="https://www.youtube.com/embed/Wc2UN3yL2CU?autoplay=1&mute=1&controls=0&showinfo=0&modestbranding=1&loop=1&playlist=Wc2UN3yL2CU" 
+      frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+      allowfullscreen>
+    </iframe>
+  </div>
 
   <div class="subtitle-container">
-    <h2 class="subtitle">OFFICIAL PAGANI DEALER OF PANAMA</h2>
-    <h2 class="subtitle">HYPERCARS</h2>
-    <h2 class="subtitle">EVENTOS Y NOTICIAS</h2>
-    <h2 class="subtitle">SOBRE NOSOTROS</h2>
+    <div class="vertical-text">
+      <span>OFFICIAL</span>
+      <span>PAGANI</span>
+      <span>DEALER</span>
+      <span>OF</span>
+      <span>PANAMA</span>
+    </div>
+    <h2 class="subtitle">LA VELOCITÀ NELLE TUE MANI</h2>
+ 
   </div>
-  
-  
 </div>
+<section class="car-details-section">
+  <div class="car-details-container">
+    <h2 class="section-title">El Arte de la Ingeniería</h2>
+    
+    <!-- Detalle 1: Pagani Huayra -->
+    <div class="car-detail">
+      <img src="assets/logos/OIP (1).jpg" alt="Pagani Huayra" class="car-image">
+      <div class="car-info">
+        <h3>Pagani Huayra</h3>
+        <p>
+          Conocido como el "Dios del Viento", el Huayra combina aerodinámica avanzada con un motor V12 biturbo de 730 caballos de fuerza. Cada detalle está diseñado para ofrecer velocidad y lujo incomparables.
+        </p>
+      </div>
+    </div>
 
+    <!-- Detalle 2: Ingenieros de Pagani -->
+    <div class="car-detail">
+      <img src="assets/logos/pagani_utopia_14.jpg" alt="Ingenieros de Pagani" class="car-image">
+      <div class="car-info">
+        <h3>Ingenieros Visionarios</h3>
+        <p>
+          Liderados por Horacio Pagani, el equipo de ingenieros trabaja con precisión quirúrgica para crear autos que son verdaderas obras de arte. Cada componente es una fusión de tecnología y diseño.
+        </p>
+      </div>
+    </div>
+
+    <!-- Detalle 3: Historia de Pagani -->
+    <div class="car-detail">
+      <img src="assets/logos/paganiinterview0_1.jpg" alt="Historia de Pagani" class="car-image">
+      <div class="car-info">
+        <h3>Historia de Excelencia</h3>
+        <p>
+          Desde su fundación en 1992, Pagani ha redefinido el lujo automotriz. Con raíces en la tradición italiana, la marca ha revolucionado la industria con materiales innovadores como la fibra de carbono.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="carousel-section">
+  <h2 class="carousel-title">Modelos Exclusivos Pagani</h2>
+  
+  <div class="carousel-wrapper">
+    <div class="carousel-container" [style.transform]="'translateX(-' + currentSlide * 100 + '%)'">
+      <!-- Carro 1 -->
+      <div class="carousel-item">
+        <img src="https://via.placeholder.com/600x350" alt="Pagani Huayra" class="car-image">
+        <div class="car-details">
+          <h3>Pagani Huayra</h3>
+          <p>Este hypercar combina aerodinámica avanzada con diseño artístico.</p>
+        </div>
+      </div>
+
+      <!-- Carro 2 -->
+      <div class="carousel-item">
+        <img src="https://via.placeholder.com/600x350" alt="Pagani Zonda" class="car-image">
+        <div class="car-details">
+          <h3>Pagani Zonda</h3>
+          <p>El Zonda redefine el lujo y la velocidad.</p>
+        </div>
+      </div>
+
+      <!-- Carro 3 -->
+      <div class="carousel-item">
+        <img src="https://via.placeholder.com/600x350" alt="Pagani Utopia" class="car-image">
+        <div class="car-details">
+          <h3>Pagani Utopia</h3>
+          <p>Elegancia y tecnología fusionadas en un diseño innovador.</p>
+        </div>
+      </div>
+
+      <!-- Carro 4 -->
+      <div class="carousel-item">
+        <img src="https://via.placeholder.com/600x350" alt="Pagani Imola" class="car-image">
+        <div class="car-details">
+          <h3>Pagani Imola</h3>
+          <p>Máxima velocidad y agilidad en la pista.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Botones de navegación -->
+    <button class="carousel-arrow left-arrow" (click)="moveLeft()">&#8249;</button>
+    <button class="carousel-arrow right-arrow" (click)="moveRight()">&#8250;</button>
+  </div>
+</section>
